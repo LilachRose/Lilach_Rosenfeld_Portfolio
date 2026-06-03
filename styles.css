@@ -1031,6 +1031,13 @@ button {
     linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
 }
 
+#integrated-marketing-samples .focus-image img,
+#integrated-marketing-samples .linked-sample img {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
+    linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
+}
+
 #social-media .story-break + .gallery-item img,
 #social-media .story-break + .gallery-item + .gallery-item img,
 #social-media .story-break + .gallery-item + .gallery-item + .gallery-item img {
@@ -2104,6 +2111,13 @@ dd {
 
   #integrated-marketing-samples .focus-image,
   #integrated-marketing-samples .linked-sample {
+    background:
+      radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
+      linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
+  }
+
+  #integrated-marketing-samples .focus-image img,
+  #integrated-marketing-samples .linked-sample img {
     background:
       radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
       linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
