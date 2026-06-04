@@ -11,4 +11,4 @@ Delete old root files before uploading, especially:
 - vercel.json
 - package.json
 
-This package is a static single-file build for Vercel/GitHub.
+This is a trial version for the stretched Flyer card.
