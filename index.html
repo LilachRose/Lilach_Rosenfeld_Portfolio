@@ -144,12 +144,12 @@ button {
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   z-index: 15;
   display: none;
   min-width: 220px;
-  padding: 10px;
+  padding: 18px 10px 10px;
   background: rgba(255, 246, 240, 0.98);
   border: 2px solid var(--black);
   border-radius: 12px;
@@ -1155,9 +1155,9 @@ button {
   justify-self: center;
   align-self: center;
   object-fit: contain;
-  background: var(--white);
-  border: 2px solid var(--white);
-  border-radius: 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .lightbox figure {
@@ -1227,12 +1227,15 @@ button {
   top: 50%;
   width: clamp(44px, 6vw, 60px);
   height: clamp(44px, 6vw, 60px);
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 2px solid var(--white);
   border-radius: 50%;
   color: var(--white);
   background: rgba(17, 16, 20, 0.62);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 0;
   transform: translateY(-50%);
 }
 
@@ -3228,6 +3231,8 @@ window.portfolioData = {
         host === "provacan.co.uk" && parsed.pathname.includes("/blogs/cbd-academy/cbd-for-sleep")
       ) || (
         host === "ynet.co.il" && parsed.pathname.includes("/articles/")
+      ) || (
+        host === "magazine.shufersal.co.il"
       );
     } catch {
       return false;
