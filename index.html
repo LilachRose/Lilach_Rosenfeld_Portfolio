@@ -1041,12 +1041,10 @@ button {
     linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
 }
 
-#integrated-marketing-samples .focus-image img,
-#integrated-marketing-samples .linked-sample img {
-  background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
-    linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
-}
+  #integrated-marketing-samples .focus-image img,
+  #integrated-marketing-samples .linked-sample img {
+    background: transparent !important;
+  }
 
 #social-media .story-break + .gallery-item img,
 #social-media .story-break + .gallery-item + .gallery-item img,
@@ -1237,6 +1235,22 @@ button {
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   line-height: 0;
   transform: translateY(-50%);
+}
+
+.lightbox-nav::before {
+  content: "";
+  width: 42%;
+  height: 42%;
+  border-top: 4px solid currentColor;
+  border-right: 4px solid currentColor;
+}
+
+.lightbox-prev::before {
+  transform: translateX(12%) rotate(-135deg);
+}
+
+.lightbox-next::before {
+  transform: translateX(-12%) rotate(45deg);
 }
 
 .lightbox-prev {
@@ -2129,12 +2143,10 @@ dd {
       linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
   }
 
-  #integrated-marketing-samples .focus-image img,
-  #integrated-marketing-samples .linked-sample img {
-    background:
-      radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
-      linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
-  }
+#integrated-marketing-samples .focus-image img,
+#integrated-marketing-samples .linked-sample img {
+  background: transparent !important;
+}
 
   #social-media .story-break + .gallery-item img,
   #social-media .story-break + .gallery-item + .gallery-item img,
@@ -2557,7 +2569,7 @@ window.portfolioData = {
       items: [
         { title: "Provacan", image: "assets/logo-provacan.jpg", link: "https://provacan.co.uk/collections/all-cbd-products", external: true },
         { title: "HUGG", image: "assets/logo-hucc.png", link: "https://www.amazon.co.uk/CiiTECH-HuGG-Hydrating-Moisturising-Spectrum/dp/B09DD95TVV", external: true },
-        { title: "Shufersal Magazine", image: "assets/logo-megadin-color.png", link: "https://magazine.shufersal.co.il/" }
+        { title: "Shufersal Magazine", image: "assets/logo-megadin-color.png", link: "https://magazine.shufersal.co.il/", external: true }
       ]
     },
     {
@@ -3024,7 +3036,7 @@ window.portfolioData = {
   lightbox.className = "lightbox";
   lightbox.innerHTML = `
     <button class="lightbox-close" type="button" aria-label="Close enlarged image">Close</button>
-    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&larr;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image"></button>
     <figure>
       <aside class="lightbox-meta">
         <p class="lightbox-category"></p>
@@ -3032,7 +3044,7 @@ window.portfolioData = {
       </aside>
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
     </figure>
-    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&rarr;</button>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image"></button>
   `;
   document.body.appendChild(lightbox);
   let activeGalleryIndex = 0;
