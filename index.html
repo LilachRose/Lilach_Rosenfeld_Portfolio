@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -2220,7 +2220,7 @@ window.portfolioData = {
   hero: {
     title: "Creative Portfolio",
     subtitle: "By Lilach Rosenfeld",
-    tagline: "Product Marketing ג€¢ Content ג€¢ Events ג€¢ Brand ג€¢ Digital",
+    tagline: "Product Marketing • Content • Events • Brand • Digital",
     image: "assets/contact-marketing-collage.png",
     imageAlt: "Marketing and content strategy collage"
   },
@@ -2407,7 +2407,8 @@ window.portfolioData = {
               title: "The Ultimate Guide To CBD & Sleep",
               brand: "CiiTECH",
               image: "assets/logo-ciitech.png",
-              link: "https://provacan.co.uk/blogs/cbd-academy/cbd-for-sleep"
+              link: "https://provacan.co.uk/blogs/cbd-academy/cbd-for-sleep",
+              external: true
             },
             {
               title: "CiiTECH Becomes Global Founder Partner of Tel-Aviv Heat",
@@ -2422,7 +2423,7 @@ window.portfolioData = {
               link: "https://feeditor-article.vercel.app/"
             },
             {
-              title: "׳”׳¡׳¨׳˜ \"׳׳©׳‘׳•׳¨ ׳׳× ׳”׳§׳¨׳— 2\": ׳׳™׳ ׳׳”׳‘׳” ׳”׳¦׳™׳׳” ׳׳׳׳›׳” ׳§׳₪׳•׳׳”",
+              title: "הסרט \"לשבור את הקרח 2\": איך אהבה הצילה ממלכה קפואה",
               brand: "Article",
               image: "assets/article-hebrew.png",
               link: "https://www.atmag.co.il/%D7%9C%D7%A9%D7%91%D7%95%D7%A8-%D7%90%D7%AA-%D7%94%D7%A7%D7%A8%D7%97-2-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA/?utm_source=Pinterest&utm_medium=Messenger&utm_campaign=Share_Button"
@@ -2512,7 +2513,8 @@ window.portfolioData = {
         {
           title: "Caetano Veloso & Gilberto Gil - Press Conference - Perez Center for Peace",
           image: "assets/event-press-conference.jpg",
-          link: "https://www.ynet.co.il/articles/0,7340,L-4684480,00.html"
+          link: "https://www.ynet.co.il/articles/0,7340,L-4684480,00.html",
+          external: true
         },
         {
           title: "The Perfect Night",
@@ -2550,7 +2552,7 @@ window.portfolioData = {
       label: "E-Commerce",
       title: "E-Commerce",
       items: [
-        { title: "Provacan", image: "assets/logo-provacan.jpg", link: "https://provacan.co.uk/collections/all-cbd-products" },
+        { title: "Provacan", image: "assets/logo-provacan.jpg", link: "https://provacan.co.uk/collections/all-cbd-products", external: true },
         { title: "HUGG", image: "assets/logo-hucc.png", link: "https://www.amazon.co.uk/CiiTECH-HuGG-Hydrating-Moisturising-Spectrum/dp/B09DD95TVV", external: true },
         { title: "Shufersal Magazine", image: "assets/logo-megadin-color.png", link: "https://magazine.shufersal.co.il/" }
       ]
@@ -2717,7 +2719,7 @@ window.portfolioData = {
           .map(
             (item) => `
               <div class="link-card">
-              <button class="article-card page-trigger" type="button" data-url="${attr(item.link)}" data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}" aria-label="Open ${attr(item.title)}">
+              <button class="article-card ${item.external ? "external-trigger" : "page-trigger"}" type="button" data-url="${attr(item.link)}" data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}" aria-label="Open ${attr(item.title)}">
                 <img src="${item.image}" alt="${item.brand}" loading="lazy">
                 <h3 ${item.title.match(/[\u0590-\u05ff]/) ? 'dir="rtl"' : ""}>${textWithBreaks(item.title)}</h3>
               </button>
@@ -2906,7 +2908,7 @@ window.portfolioData = {
 
     return `
       <div class="link-card">
-      <button class="event-item page-trigger" type="button" data-url="${attr(item.link || "#events")}" data-embed-url="${attr(item.embedUrl || item.link || "#events")}" data-title="${attr(item.title)}" aria-label="Open ${attr(item.title)}">
+      <button class="event-item ${item.external ? "external-trigger" : "page-trigger"}" type="button" data-url="${attr(item.link || "#events")}" data-embed-url="${attr(item.embedUrl || item.link || "#events")}" data-title="${attr(item.title)}" aria-label="Open ${attr(item.title)}">
         ${content}
       </button>
       ${item.link ? printLink(item.link, item.title) : ""}
@@ -3019,7 +3021,7 @@ window.portfolioData = {
   lightbox.className = "lightbox";
   lightbox.innerHTML = `
     <button class="lightbox-close" type="button" aria-label="Close enlarged image">Close</button>
-    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">ג€¹</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&larr;</button>
     <figure>
       <aside class="lightbox-meta">
         <p class="lightbox-category"></p>
@@ -3027,7 +3029,7 @@ window.portfolioData = {
       </aside>
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
     </figure>
-    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">ג€÷</button>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&rarr;</button>
   `;
   document.body.appendChild(lightbox);
   let activeGalleryIndex = 0;
@@ -3282,4 +3284,3 @@ window.portfolioData = {
 </script>
   </body>
 </html>
-
