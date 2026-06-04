@@ -1043,7 +1043,7 @@ button {
 
   #integrated-marketing-samples .focus-image img,
   #integrated-marketing-samples .linked-sample img {
-    background: transparent !important;
+    background: var(--white) !important;
   }
 
 #social-media .story-break + .gallery-item img,
@@ -1246,11 +1246,11 @@ button {
 }
 
 .lightbox-prev::before {
-  transform: translateX(12%) rotate(-135deg);
+  transform: translateX(2px) rotate(-135deg);
 }
 
 .lightbox-next::before {
-  transform: translateX(-12%) rotate(45deg);
+  transform: translateX(-2px) rotate(45deg);
 }
 
 .lightbox-prev {
@@ -1668,8 +1668,32 @@ dd {
     height: 280px;
   }
 
+  .play-button::after {
+    left: 50%;
+    top: 50%;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 16px;
+    transform: translate(-38%, -50%);
+  }
+
   .compact-gallery .gallery-item img {
     height: 190px;
+  }
+
+  #integrated-marketing-samples .gallery-item,
+  #integrated-marketing-samples .focus-image,
+  #integrated-marketing-samples .linked-sample {
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  #integrated-marketing-samples .focus-image img,
+  #integrated-marketing-samples .linked-sample img {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .article-grid,
@@ -1696,6 +1720,22 @@ dd {
     bottom: 22px;
   }
 
+  .lightbox {
+    justify-items: center;
+  }
+
+  .lightbox figure {
+    width: 100vw;
+    padding-left: 0;
+    justify-items: center;
+  }
+
+  .lightbox img {
+    justify-self: center;
+    margin-inline: auto;
+    max-width: calc(100vw - 32px);
+  }
+
   .article-card {
     min-height: 0;
   }
@@ -1711,6 +1751,19 @@ dd {
   .contact-link {
     grid-template-columns: 1fr;
     gap: 4px;
+    min-width: 0;
+  }
+
+  .contact-value {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    font-size: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  .contact-card a {
+    overflow-wrap: normal;
   }
 
   .contact-card dl {
@@ -2145,7 +2198,7 @@ dd {
 
 #integrated-marketing-samples .focus-image img,
 #integrated-marketing-samples .linked-sample img {
-  background: transparent !important;
+  background: var(--white) !important;
 }
 
   #social-media .story-break + .gallery-item img,
@@ -3265,7 +3318,7 @@ window.portfolioData = {
 
   function pushMobileOverlayState() {
     if (!isMobileViewport() || mobileOverlayStateActive) return;
-    history.pushState({ portfolioOverlay: true }, "");
+    history.pushState({ portfolioOverlay: true }, "", window.location.href);
     mobileOverlayStateActive = true;
   }
 
@@ -3291,9 +3344,11 @@ window.portfolioData = {
       closingOverlayFromUi = false;
       return;
     }
-    if (!isMobileViewport() || !isAnyOverlayOpen()) return;
-    closeAnyOverlay();
-    mobileOverlayStateActive = false;
+    if (!isMobileViewport()) return;
+    if (mobileOverlayStateActive || isAnyOverlayOpen()) {
+      closeAnyOverlay();
+      mobileOverlayStateActive = false;
+    }
   });
 
 })();

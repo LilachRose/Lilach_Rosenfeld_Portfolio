@@ -1,8 +1,14 @@
 ﻿UPLOAD INSTRUCTIONS
 
-Delete all existing files in the GitHub repository.
-Upload ONLY:
+Upload only the contents of this folder to the GitHub repository root:
 - index.html
 - assets/
 
-Do not upload app.js, portfolioData.js, styles.css, vercel.json, or the ZIP itself.
+Delete old root files before uploading, especially:
+- app.js
+- portfolioData.js
+- styles.css
+- vercel.json
+- package.json
+
+This package is a static single-file build for Vercel/GitHub.
