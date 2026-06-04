@@ -1036,6 +1036,10 @@ button {
 
 #integrated-marketing-samples .focus-image,
 #integrated-marketing-samples .linked-sample {
+  display: block;
+  width: 100%;
+  height: 292px;
+  box-sizing: border-box;
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.76), transparent 34%),
     linear-gradient(145deg, #e7fbff 0%, #cceff8 38%, #a9ddea 100%) !important;
@@ -1172,6 +1176,9 @@ button {
 .lightbox img[src*="integrated-email-card"],
 .lightbox img[src*="integrated-landing-card"] {
   background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
 .lightbox figure {
@@ -1701,6 +1708,7 @@ dd {
   #integrated-marketing-samples .focus-image,
   #integrated-marketing-samples .linked-sample {
     max-width: 100%;
+    height: 240px;
     overflow: hidden;
     box-sizing: border-box;
     padding: 14px 18px;
